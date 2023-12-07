@@ -10,7 +10,54 @@
     />
   </head>
   <body>
-    <h1 id="h1El">Test</h1>
-    
+    <header class="section has-background-info columns">
+      <div class="column has-text-white is-offset-6 is-7">
+        <h1 class="title is-2 has-text-white">Birds in National Parks</h1>
+      </div>
+    </header>
+    <main class="section columns is-desktop is-flex-direction-row-reverse">
+      <section
+        id="forecast"
+        class="column is-10-mobile is-8-tablet is-9-desktop is-offset-1-mobile is-offset-2-tablet is-offset-0-desktop"
+      >
+        <div class="columns">
+          <div
+            id="today"
+            class="column m-3 pl-4 pr-4 mb-1 is-size-3-mobile is-size-1-tablet is-full has-text-centered"
+          ></div>
+        </div>
+        <div class="columns is-desktop"></div>
+      </section>
+      <aside
+        id="searchAside"
+        class="column is-10-mobile is-8-tablet is-3-desktop is-offset-1-mobile is-offset-2-tablet is-offset-0-desktop"
+      >
+        <form class="field" id="searchField">
+          <label
+            class="label is-size-4-desktop has-text-info is-size-5-tablet is-size-3-mobile"
+            >Search a Park</label
+          >
+          <div class="control">
+            <input
+              class="input is-size-5 mb-5"
+              type="text"
+              id="searchText"
+              placeholder="Park"
+            />
+          </div>
+          <div class="control">
+            <button
+              id="searchBtn"
+              class="button is-link is-fullwidth is-size-5 has-background-info"
+              type="submit"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+      </aside>
+    </main>
+
+    <script src="./assets/script.js"></script>
   </body>
 </html>
