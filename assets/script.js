@@ -1,7 +1,7 @@
 var searchBtn = document.getElementById("searchBtn");
 var searchText = document.getElementById("searchText");
 var requestUrl = "https://developer.nps.gov/api/v1/parks?limit=500&api_key=";
-var apiKey = "Y4jn9Z8wuXTpAzOWaleVwq7CizZECJdzBZfX1a2Y";
+var apiKey = "";
 
 function searchPark(parkName) {
   fetch(requestUrl + apiKey)
