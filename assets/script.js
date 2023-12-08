@@ -1,11 +1,14 @@
 var searchBtn = document.getElementById("searchBtn");
 var searchText = document.getElementById("searchText");
 var parkInfo = document.getElementById("parkInfo");
+var modalParkPicker = document.getElementById("modalParkPicker");
+var modalContent = document.getElementById("modalContent");
 var requestUrl = "https://developer.nps.gov/api/v1/parks?limit=500&api_key=";
-var apiKey = "apiKeyPark";
-
+var apiKey = "asdf";
+var parkData = "";
+var parkArray = [];
 var myHeaders = new Headers();
-myHeaders.append("X-eBirdApiToken", "apikeyBird");
+myHeaders.append("X-eBirdApiToken", "asdf");
 
 function searchBirds(lat, lng) {
   var requestOptions = {
@@ -13,7 +16,7 @@ function searchBirds(lat, lng) {
     headers: myHeaders,
     redirect: "follow",
     dist: 25,
-    back: 14,
+    back: "1",
     sort: "species",
   };
   fetch(
@@ -42,23 +45,83 @@ function searchPark(parkName) {
 }
 
 function filterParks(data, parkName) {
+  var parkCount = 0;
+
   for (let i = 0; i < data.data.length; i++) {
     if (data.data[i].fullName.toLowerCase().includes(parkName)) {
-      console.log(data.data[i].fullName);
       var parkIndex = i;
-      console.log(parkIndex);
+      parkArray[parkCount] = {
+        parkName: data.data[i].fullName,
+        parkCountIndex: parkCount,
+        parkArrayIndex: parkIndex,
+      };
+      parkCount++;
     }
   }
-  parkInfo.textContent = data.data[parkIndex].fullName;
-  console.log(data.data[parkIndex]);
-  var parkLatitude = data.data[parkIndex].latitude;
-  var parkLongitude = data.data[parkIndex].longitude;
-  searchBirds(parkLatitude, parkLongitude);
+  parkData = data;
+  openModal();
+  createModalButtons(parkArray);
+}
+function openModal() {
+  modalParkPicker.classList.add("is-active");
+}
+
+function closeModal() {
+  modalParkPicker.classList.remove("is-active");
+}
+
+function createModalButtons(parkArray) {
+  modalContent.textContent = "";
+  if (parkArray.length == 0) {
+    var parkBtn = document.createElement("button");
+    parkBtn.classList.add(
+      "button",
+      "is-fullwidth",
+      "is-size-5",
+      "has-text-black",
+      "m-1"
+    );
+    parkBtn.textContent = "No park was found, please try again";
+    modalContent.appendChild(parkBtn);
+  }
+  for (let i = 0; i < parkArray.length; i++) {
+    var parkBtn = document.createElement("button");
+    parkBtn.classList.add(
+      "button",
+      "is-fullwidth",
+      "is-size-5",
+      "has-text-black",
+      "m-1"
+    );
+    parkBtn.textContent = parkArray[i].parkName;
+    modalContent.appendChild(parkBtn);
+  }
+}
+function pickPark(pickedPark) {
+  for (let i = 0; i < parkArray.length; i++) {
+    if (pickedPark == parkArray[i].parkName) {
+      var parkLatitude = parkData.data[parkArray[i].parkArrayIndex].latitude;
+      var parkLongitude = parkData.data[parkArray[i].parkArrayIndex].longitude;
+      searchBirds(parkLatitude, parkLongitude);
+    }
+  }
 }
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  if (searchText.value.length < 3) {
+  if (
+    /[^a-z]/i.test(searchText.value.toLowerCase()) ||
+    searchText.value.length < 3
+  ) {
+    return;
   }
   searchPark(searchText.value.toLowerCase());
+});
+
+modalContent.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.classList.contains("button")) {
+    closeModal();
+    pickPark(e.target.textContent);
+  }
 });
