@@ -4,6 +4,7 @@ var parkInfo = document.getElementById("parkInfo");
 var modalParkPicker = document.getElementById("modalParkPicker");
 var modalContent = document.getElementById("modalContent");
 var requestUrl = "https://developer.nps.gov/api/v1/parks?limit=500&api_key=";
+
 var apiKey = "asdf";
 var parkData = "";
 var parkArray = [];
