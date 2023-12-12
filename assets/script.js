@@ -5,11 +5,11 @@ var modalParkPicker = document.getElementById("modalParkPicker");
 var modalContent = document.getElementById("modalContent");
 var requestUrl = "https://developer.nps.gov/api/v1/parks?limit=500&api_key=";
 
-var apiKey = "asdf";
+var apiKey = "Y4jn9Z8wuXTpAzOWaleVwq7CizZECJdzBZfX1a2Y";
 var parkData = "";
 var parkArray = [];
 var myHeaders = new Headers();
-myHeaders.append("X-eBirdApiToken", "asdf");
+myHeaders.append("X-eBirdApiToken", "144remuqd7dn");
 
 function searchBirds(lat, lng) {
   var requestOptions = {

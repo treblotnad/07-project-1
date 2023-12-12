@@ -1,0 +1,146 @@
+/*styles for header*/
+.header {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+  padding-top: -10%;
+  padding: 9%;
+  height: 5rem;
+  font-weight: bold;
+  background-image: url(https://img.bekiamascotas.com/articulos/portada/22000/22732.jpg);
+}
+
+/*styles for title header*/
+
+.bir {
+  font-size: 3em;
+  text-align: left;
+  margin-left: -8%;
+  color: whitesmoke;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.bir:hover {
+  background-color: navy;
+  margin-right: 50%;
+}
+
+/*styles fot body*/
+.cotainer {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+}
+
+/* styles for h2*/
+h2 {
+  color: black;
+  font-size: 45px;
+  align-items: center;
+  padding: 20px;
+}
+
+/*styles for search*/
+
+#search-container {
+  flex: 1;
+  padding: 20px;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#searchText {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+/*style for div rigth*/
+.rigth-grid-wrapper {
+  width: 80%;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+.projects-grid {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.project {
+  border: solid;
+  color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.project:hover {
+  opacity: 1;
+}
+
+.ANDEAN-CONDOR {
+  background-image: url("./assets/images/Andean\ condor.png");
+}
+
+.BALI-MYNA {
+  background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ4Y7o6xZX3-ePeoxDnT1a0XC01tuDpQvHUHVqzsYZYoUa3lp-z");
+  background-position: 80% 15%;
+}
+
+.AMERICAN-CROW {
+  background-image: url("./assets/images/bird-1.png");
+  background-position: 60% 15%;
+}
+
+.BLUE-BELLIED-ROLLER {
+  background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzvJnJednZkaUKr3ZA7YVcveT80Ul9lZDe3j4QyheHcpFfMKIZ");
+  background-position: 60% 15%;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  /* Settings for smaller screens */
+  .header {
+    padding: 10px 0;
+  }
+
+  .bir {
+    font-size: 1.5em;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+
+  .right-grid-wrapper {
+    padding: 10px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
