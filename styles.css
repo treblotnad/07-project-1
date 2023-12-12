@@ -132,7 +132,7 @@ h2{
 
   /* Responsive Styles */
 @media screen and (max-width: 768px) {
-    /* Ajustes para pantallas más pequeñas */
+    /* Settings for smaller screens */
     .header {
         padding: 10px 0;
       }
