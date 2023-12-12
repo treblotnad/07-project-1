@@ -58,14 +58,17 @@ function filterParks(data, parkName) {
         parkName: data.data[i].fullName,
         parkCountIndex: parkCount,
         parkArrayIndex: parkIndex,
+        
       };
+      console.log(data.data[2])
       parkCount++;
-    }console.log(data.data[1])/////
+    }
   }
   parkData = data;
   openModal();
   createModalButtons(parkArray);
 }
+
 function openModal() {
   modalParkPicker.classList.add("is-active");
 }
@@ -110,8 +113,23 @@ function pickPark(pickedPark) {
       searchBirds(parkLatitude, parkLongitude);
     }
   }
+  console.log(parkArray[1].)
+  //hero(pickedPark);
 }
 
+var heroParkNameLink = document.getElementById("heroParkName")
+var heroParkName =document.getElementById("fullName")
+var heroParkImage
+
+/*function hero(parkName){
+  
+  var h2 = document.createElement("h2")
+
+  
+  heroParkNameLink.setAttribute("href",)
+
+  
+}*/
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
