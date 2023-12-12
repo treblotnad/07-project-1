@@ -43,10 +43,13 @@ function searchPark(parkName) {
     .then(function (data) {
       filterParks(data, parkName);
     });
+   
 }
+
 
 function filterParks(data, parkName) {
   var parkCount = 0;
+  
 
   for (let i = 0; i < data.data.length; i++) {
     if (data.data[i].fullName.toLowerCase().includes(parkName)) {
@@ -57,7 +60,7 @@ function filterParks(data, parkName) {
         parkArrayIndex: parkIndex,
       };
       parkCount++;
-    }
+    }console.log(data.data[1])/////
   }
   parkData = data;
   openModal();
@@ -98,6 +101,7 @@ function createModalButtons(parkArray) {
     modalContent.appendChild(parkBtn);
   }
 }
+
 function pickPark(pickedPark) {
   for (let i = 0; i < parkArray.length; i++) {
     if (pickedPark == parkArray[i].parkName) {
@@ -107,6 +111,7 @@ function pickPark(pickedPark) {
     }
   }
 }
+
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();

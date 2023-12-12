@@ -1,0 +1,30 @@
+:root{
+    --primary-color:#8FBC8F50;
+    --secondary-color:#87CEEB;
+    --accent-color:#F0E68C;
+    --background-color:#D2B48C;
+
+}
+* {
+    background-color: var();
+}
+
+header{
+    background-color: #8FBC8F50;
+    color:#87CEEB;
+}
+button{
+    margin: 3px;
+    
+}
+.card{
+margin:5px
+}
+.hero.is-info{
+
+   background-image: url(https://www.exoticca.com/uk/magazine/wp-content/uploads/2021/06/matterhorn-BLOG-mountains.png);
+   background-repeat: no-repeat;
+   background-size: cover;
+}   
+
+
