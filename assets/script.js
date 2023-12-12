@@ -18,7 +18,7 @@ function filterParks(data, parkName) {
   //   console.log(data.data[465].fullName);
   //   console.log(data.data[465].fullName.toLowerCase().includes(parkName));
   for (let i = 0; i < data.data.length; i++) {
-    // console.log(data.data[i].fullName);
+  // console.log(data.data[i].fullName);
     // console.log(parkName);
     if (data.data[i].fullName.toLowerCase().includes(parkName)) {
       console.log(data.data[i].fullName);
