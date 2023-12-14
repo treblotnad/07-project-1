@@ -208,6 +208,7 @@ function renderBirds(birdArray) {
   }
   var birdNum = birdArray.length;
   var birdDisplayCount = 24;
+  var birdIndex = 0;
   if (birdNum < 24) {
     birdDisplayCount = birdNum;
   }
@@ -215,11 +216,11 @@ function renderBirds(birdArray) {
   for (let i = 0; i < birdDisplayCount; i++) {
     var cardBank = document.createElement("div");
     for (let j = 0; j < 3; j++) {
-      var comName = birdArray[i].comName;
-      var locationSeen = birdArray[i].locName;
-      var obsDate = birdArray[i].obsDt;
-      var sciName = birdArray[i].sciName;
-      var birdCount = birdArray[i].howMany;
+      var comName = birdArray[birdIndex].comName;
+      var locationSeen = birdArray[birdIndex].locName;
+      var obsDate = birdArray[birdIndex].obsDt;
+      var sciName = birdArray[birdIndex].sciName;
+      var birdCount = birdArray[birdIndex].howMany;
 
       var cardToAdd = document.createElement("a");
       var cardContent = document.createElement("div");
@@ -253,8 +254,12 @@ function renderBirds(birdArray) {
       mediaContent.appendChild(sciNameContent);
       mediaContent.appendChild(obsDateContent);
 
-      i++;
+      if (birdIndex == birdDisplayCount - 1) {
+        break;
+      }
+      birdIndex++;
     }
+    i = i + 2;
     birdCards.appendChild(cardBank);
   }
 }
