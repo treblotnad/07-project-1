@@ -113,7 +113,7 @@ function pickPark(pickedPark) {
       searchBirds(parkLatitude, parkLongitude);
     }
   }
-  console.log(parkArray[1].)
+  //console.log(parkArray[1].)
   //hero(pickedPark);
 }
 
