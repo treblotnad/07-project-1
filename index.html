@@ -13,18 +13,23 @@
   </head>
   <body>
     <header class="header">
-      <div class="container-fluid">
-        <h1 class="bir">Birdwatching</h1>
-      </div>
+        <img src="/assets/images/pxfuel (1).jpg" />
+        <div class="bir">
+            <h1>Birdwatching</h1>
+        </div>
     </header>
 
     <main>
-      <!-- search btn -->
+      
       <div class="cotainer">
-        <div id="search-container">
-          <h2>BIRD PARKS..</h2>
-          <input type="text" id="searchText" placeholder="Search...." />
-          <button id="searchBtn" class="search-btn">Search</button>
+        < <div class="section">
+            <!-- search btn -->
+            <div id="search-container">
+                <h2>National Parks..</h2>
+                <input type="text" id="search-input" placeholder="National Park Service....">
+                <button id="searchBtn" onclick="handleSearch()">Search</button>
+                <!-- Aquí puedes agregar tu código JavaScript para manejar la búsqueda -->
+            </div>
         </div>
 
         <div class="rigth-grid-wrapper">
@@ -86,8 +91,8 @@
           <p>Please pick which park you want!</p>
         </div>
       </div>
+    </div>
 
-      <button class="modal-close is-large" aria-label="close"></button>
     </div>
     <script src="./assets/script.js"></script>
   </body>
