@@ -38,7 +38,7 @@ function searchBirds(lat, lng) {
     })
     .catch((error) => console.log("error", error));
 }
-function searchPark(parkName) {
+function searchPark(parkName, firstTime = false) {
   parkArray = [];
   fetch(requestUrl + apiKey)
     .then(function (response) {
@@ -46,11 +46,11 @@ function searchPark(parkName) {
       return response.json();
     })
     .then(function (data) {
-      filterParks(data, parkName);
+      filterParks(data, parkName, firstTime);
     });
 }
 
-function filterParks(data, parkName) {
+function filterParks(data, parkName, firstTime) {
   var parkCount = 0;
 
   for (let i = 0; i < data.data.length; i++) {
@@ -66,8 +66,12 @@ function filterParks(data, parkName) {
     // console.log(data.data[1]);
   }
   parkData = data;
-  openModal();
-  createModalButtons(parkArray);
+  if (!firstTime) {
+    openModal();
+    createModalButtons(parkArray);
+  } else {
+    pickPark(parkName);
+  }
 }
 
 function openModal() {
@@ -304,5 +308,5 @@ function renderBirds(birdArray) {
 
 if (localStorage.length > 0) {
   renderHistory();
-  searchPark(localStorage.getItem(localStorage.length - 1).toLowerCase());
+  searchPark(localStorage.getItem(localStorage.length - 1).toLowerCase(), true);
 }
