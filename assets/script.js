@@ -69,6 +69,7 @@ function filterParks(data, parkName) {
   openModal();
   createModalButtons(parkArray);
 }
+
 function openModal() {
   modalParkPicker.classList.add("is-active");
 }
@@ -110,10 +111,41 @@ function pickPark(pickedPark) {
     if (pickedPark == parkArray[i].parkName) {
       var parkLatitude = parkData.data[parkArray[i].parkArrayIndex].latitude;
       var parkLongitude = parkData.data[parkArray[i].parkArrayIndex].longitude;
+      var parkWeb = parkData.data[parkArray[i].parkArrayIndex].url
+      var parkImage =parkData.data[parkArray[i].parkArrayIndex].images[0].url
+      var title = parkData.data[parkArray[i].parkArrayIndex].images[0].title
+      var credit = parkData.data[parkArray[i].parkArrayIndex].images[0].credit
+      var parkDescription =parkData.data[parkArray[i].parkArrayIndex].description
+      var parkEmail= parkData.data[parkArray[i].parkArrayIndex].contacts.emailAddresses[0].emailAddress
       searchBirds(parkLatitude, parkLongitude);
+      console.log(parkData.data[parkArray[i].parkArrayIndex])
+      console.log(parkData.data[parkArray[i].parkArrayIndex].contacts.emailAddresses[0].emailAddress)
+      hero(pickedPark,parkWeb,parkImage,title,credit,parkDescription,parkEmail);
     }
   }
   renderHistory();
+}
+
+var heroParkName = document.getElementById("fullName")
+var heroParkImage =document.getElementById("parkImage")
+var parkLink = document.getElementById("parkLink")
+var imageTitle = document.getElementById("imageTitle")
+var imagesCredit =document.getElementById("credit")
+var description = document.getElementById("descriptionOfPark")
+var parkInfo = document.getElementById("parkInfo")
+
+function hero(parkName,parkWeb,parkImage,title,credit,parkDescription,parkEmail){
+  heroParkName.textContent=parkName.toUpperCase()
+  parkLink.setAttribute("href", parkWeb); 
+  heroParkImage.style.backgroundImage= `url(${parkImage})`
+  heroParkImage.style.backgroundSize = "cover"
+  heroParkImage.style.backgroundRepeat ="no-repeat"
+  imageTitle.textContent = title
+  imagesCredit.textContent ="Photo by:"+ credit
+  description.textContent=parkDescription
+  parkInfo.textContent="Email us @:"+parkEmail
+  // park hours
+  // park 
 }
 
 searchBtn.addEventListener("click", function (e) {
