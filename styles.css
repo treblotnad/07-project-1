@@ -14,11 +14,9 @@
   top: 44%;
   left: 15%;
   transform: translate(-50%, -50%);
-  
-
 }
 
-h1{
+h1 {
   font-size: 4.8rem;
   padding-left: 58px;
   text-shadow: 2px 5px #000;
@@ -55,11 +53,10 @@ h2 {
   flex: 1;
   border: 1px solid #ccc;
   padding: 20px;
-  
 }
 
 .section:nth-child(odd) {
-  background-color: #A5D0EB;
+  background-color: #a5d0eb;
 }
 
 #search-container {
