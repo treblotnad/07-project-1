@@ -12,8 +12,7 @@
   </head>
   <body>
     <div class="columns">
-      <header class="column is-12 title is-1">world of birds</header>
-      <section class="section"></section>
+      <header class="column is-12 title is-1">National Park and Local Birds</header>
     </div>
     <div class="columns box" style="height: 100%">
       <aside class="column is-3">
@@ -22,18 +21,18 @@
             class="input"
             type="text"
             id="search-input"
-            placeholder="Yellowstone"
+            placeholder="Arches"
           />
 
           <button
             class="button is-large is-link"
             id="searchBtn"
-            style="background-color: #c2aa3d"
+            style="background-color: #7cc0db89"
             type="submit"
           >
             search
           </button>
-          <button class="button is-large is-link is-danger" id="clearHistory">
+          <button  style="background-color: #8FBC8F50" class="button is-large is-link is-danger" id="clearHistory">
             Clear History
           </button>
         </form>
@@ -45,11 +44,17 @@
             </div>
           </div>
         </div>
+        <div class="section" ></div>
         <div class="tile is-ancestor">
           <div class="tile is-vertical">
             <h2 class="title tile is-parent">Park Info</h2>
             <div class="box">
-              <a id="parkInfo" ></a>
+
+              <p id="oHours"></p>
+              <div class="section"></div>
+              <a id="parkInfo"></a>
+              <p id="parkNumber"></p>
+
             </div>
           </div>
         </div>
@@ -57,11 +62,9 @@
       <div class="column is-9">
         <div class="columns">
           <header class="column is-full">
-            <a id="parkLink">
-              <!-- replace with link to national park -->
-              <h2 class="title is-2" id="fullName"></h2>
+              <a id="parkLink"><h2 class="title is-2" id="fullName"></h2></a>
               <p id="descriptionOfPark"></p>
-            </a>
+            
           </header>
         </div>
 
