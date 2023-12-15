@@ -167,16 +167,18 @@ function hero(
 ) {
   heroParkName.textContent = parkName.toUpperCase();
   parkLink.setAttribute("href", parkWeb);
+  parkLink.setAttribute("target", "_blank");
   heroParkImage.style.backgroundImage = `url(${parkImage})`;
   heroParkImage.style.backgroundSize = "cover";
   heroParkImage.style.backgroundRepeat = "no-repeat";
   imageTitle.textContent = title;
   imagesCredit.textContent = "Photo by:" + credit;
   description.textContent = parkDescription;
+
   parkInfo.textContent = "Email us: " + parkEmail;
   parkNumber.textContent= "Call us: " + parkPhoneNumber
   oHours.textContent= operatingHours
-  
+    parkInfo.setAttribute("href", "mailto:" + parkEmail);
   
   // park hours
   // park
@@ -279,7 +281,9 @@ function renderBirds(birdArray) {
       var obsDateContent = document.createElement("p");
       var sciNameContent = document.createElement("p");
 
-      cardBank.classList.add("columns", "is-centered", "pb-1");
+
+      cardBank.classList.add("columns", "is-centered", "pb-1","mb-3");
+
       cardToAdd.classList.add("card", "column", "is-4");
       cardContent.classList.add("card-content");
       mediaContent.classList.add("media-content");
