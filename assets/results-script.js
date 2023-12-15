@@ -124,12 +124,10 @@ function pickPark(pickedPark) {
       var parkEmail =
         parkData.data[parkArray[i].parkArrayIndex].contacts.emailAddresses[0]
           .emailAddress;
+      var parkPhoneNumber =parkData.data[parkArray[i].parkArrayIndex].contacts.phoneNumbers[0].phoneNumber
+      var operatingHours =parkData.data[parkArray[i].parkArrayIndex].operatingHours[0].description
       searchBirds(parkLatitude, parkLongitude);
       console.log(parkData.data[parkArray[i].parkArrayIndex]);
-      console.log(
-        parkData.data[parkArray[i].parkArrayIndex].contacts.emailAddresses[0]
-          .emailAddress
-      );
       hero(
         pickedPark,
         parkWeb,
@@ -137,7 +135,9 @@ function pickPark(pickedPark) {
         title,
         credit,
         parkDescription,
-        parkEmail
+        parkEmail,
+        parkPhoneNumber,
+        operatingHours,
       );
     }
   }
@@ -151,6 +151,8 @@ var imageTitle = document.getElementById("imageTitle");
 var imagesCredit = document.getElementById("credit");
 var description = document.getElementById("descriptionOfPark");
 var parkInfo = document.getElementById("parkInfo");
+var parkNumber =document.getElementById("parkNumber");
+var oHours =document.getElementById("oHours");
 
 function hero(
   parkName,
@@ -159,7 +161,9 @@ function hero(
   title,
   credit,
   parkDescription,
-  parkEmail
+  parkEmail,
+  parkPhoneNumber,
+  operatingHours,
 ) {
   heroParkName.textContent = parkName.toUpperCase();
   parkLink.setAttribute("href", parkWeb);
@@ -169,7 +173,11 @@ function hero(
   imageTitle.textContent = title;
   imagesCredit.textContent = "Photo by:" + credit;
   description.textContent = parkDescription;
-  parkInfo.textContent = "Email us @:" + parkEmail;
+  parkInfo.textContent = "Email us: " + parkEmail;
+  parkNumber.textContent= "Call us: " + parkPhoneNumber
+  oHours.textContent= operatingHours
+  
+  
   // park hours
   // park
 }
@@ -271,7 +279,7 @@ function renderBirds(birdArray) {
       var obsDateContent = document.createElement("p");
       var sciNameContent = document.createElement("p");
 
-      cardBank.classList.add("columns", "is-centered");
+      cardBank.classList.add("columns", "is-centered", "pb-1");
       cardToAdd.classList.add("card", "column", "is-4");
       cardContent.classList.add("card-content");
       mediaContent.classList.add("media-content");
