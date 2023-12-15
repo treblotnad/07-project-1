@@ -201,16 +201,10 @@ footer p {
     padding: 10px 0;
   }
 
-  
   .bir {
-    /* Nuevos estilos para .bir en pantallas más pequeñas */
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 5px;
+    font-size: 1.5em;
   }
-}
-
+  
 
   #search-input {
     width: 100%;
