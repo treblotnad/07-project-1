@@ -4,14 +4,13 @@
   background-color: #333;
   color: #fff;
   position: relative;
-  /* Permite posicionar hijos relativos a este contenedor */
+
 }
 
 .bir {
   margin: 0;
   position: absolute;
   text-align: center;
-  
   top: 44%;
   left: 15%;
   transform: translate(-50%, -50%);
@@ -23,21 +22,21 @@ h1{
   font-size: 4.8rem;
   padding-left: 58px;
   text-shadow: 2px 5px #000;
-  color: rgba(37, 251, 17, 0.922);
+  color: rgba(19, 3, 3, 0);
   font-family: 'poppis', sans-serif;
   text-align: center;
 }
 
 .header img {
-  width: 100%; /* Ajusta el ancho de la imagen al 100% */
+  width: 100%; 
   height: 400px;
   
-\        }
+}
 
 /* styles for h2*/
 h2 {
-  color: black;
-  font-size: 45px;
+  color:black;
+  font-size:45px;
   align-items: center;
   padding: 20px;
 }
@@ -47,6 +46,7 @@ h2 {
 .container {
   display: flex;
   height: 100%;
+  
   
 
 }
@@ -58,7 +58,6 @@ h2 {
   
 }
 
-/* Ajusta los estilos según tus preferencias */
 .section:nth-child(odd) {
   background-color: #A5D0EB;
 }
@@ -67,11 +66,10 @@ h2 {
   text-align: center;
   position: relative;
   top: 50%;
-  /* Centra el contenido dentro del contenedor de búsqueda */
 }
 
 #search-input {
-  width: 70%;
+  width: 30%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -87,10 +85,9 @@ h2 {
 }
 
 #searchBtn {
-  width: 70%;
+  width: 30%;
   position: relative;
   top: 100%;
-  /* Ajusta el ancho del botón según tus preferencias */
   padding: 10px;
   font-size: 16px;
   background-color: #007bff;
@@ -103,29 +100,32 @@ h2 {
 
 #searchBtn:hover {
   background-color: #0056b3;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 0 10px rgba(22, 143, 68, 0.2);
 }
 
 /*style for div rigth*/
 .rigth-grid-wrapper {
   margin-left: 35px;
-  width: 80%;
+  background-color: white;
   height: 800px;
   display: flex;
   justify-content: center;
-  padding: 25px 25px 25px 25px;
  
 }
 
 .projects-grid {
   width: 70%;
+  padding: 15px 15px 15px 15px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .project {
+  
   border: solid;
   color: black;
   display: flex;
@@ -134,7 +134,26 @@ h2 {
   text-decoration: none;
   background-size: cover;
   background-position: center;
-  opacity: 0.5;
+ 
+}
+/*styles for project-label*/
+.project-label{
+  background-color: #ccc;
+  border-radius: 5px;
+  width: 15%;
+}
+/*styles for h3 and p*/
+h3 {
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  
+}
+
+p{
+  font-size: 12px;
+  color: black;
+  text-align: center;
 }
 
 .project:hover {
@@ -147,25 +166,33 @@ h2 {
 
 .BALI-MYNA {
   background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ4Y7o6xZX3-ePeoxDnT1a0XC01tuDpQvHUHVqzsYZYoUa3lp-z");
-  background-position: 80% 25%;
+  background-position: 100% 100%;
 }
 
 .AMERICAN-CROW {
   background-image: url("./assets/images/bird-1.png");
-  background-position: 80% 15%;
+  background-position: 100% 100%;
 }
 
 .BLUE-BELLIED-ROLLER {
   background-image: url("https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzvJnJednZkaUKr3ZA7YVcveT80Ul9lZDe3j4QyheHcpFfMKIZ");
-  background-position: 60% 15%;
+  background-position: 100% 100%;
 }
 
 footer {
-  background-color: #333;
+  background-color: #007bff;
   color: white;
   text-align: center;
-  padding: 10px 0;
+  padding: 25px 0;
+ 
+  
 }
+
+footer p {
+  font-size: 1.2rem;
+  color: solid #000;
+}
+
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
@@ -174,9 +201,16 @@ footer {
     padding: 10px 0;
   }
 
+  
   .bir {
-    font-size: 1.5em;
+    /* Nuevos estilos para .bir en pantallas más pequeñas */
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5px;
   }
+}
+
 
   #search-input {
     width: 100%;
