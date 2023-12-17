@@ -1,0 +1,50 @@
+:root{
+    --primary-color:#8FBC8F50;
+    --secondary-color:#7cc0db89;
+    --accent-color:#F0E68C;
+    --background-color:#D2B48C;
+
+}
+
+header{
+    background-color:var(--background-color);
+    color:var(--primary-color)
+}
+button{
+    margin: 3px;
+    
+}
+.card{
+margin:5px
+}
+
+#imageTitle{
+    color:wheat;
+    background: rgba(91, 158, 168, 0.35);
+    width: fit-content;
+    
+}
+#descriptionOfPark{
+color:black
+}
+#credit{
+    color:wheat;
+    background: rgba(91, 158, 168, 0.35);
+    width: fit-content;
+}
+
+.tile.is-ancestor{
+    background-color: var(--background-color);
+}
+div.box{
+    background-color: var(--primary-color);
+}
+.button{
+    background-color: var(--secondary-color);
+}
+.card{
+    background-color: var(--secondary-color);
+}
+.card:hover{
+    background-color: var(--primary-color);
+}
