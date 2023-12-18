@@ -124,8 +124,12 @@ function pickPark(pickedPark) {
       var parkEmail =
         parkData.data[parkArray[i].parkArrayIndex].contacts.emailAddresses[0]
           .emailAddress;
-      var parkPhoneNumber =parkData.data[parkArray[i].parkArrayIndex].contacts.phoneNumbers[0].phoneNumber
-      var operatingHours =parkData.data[parkArray[i].parkArrayIndex].operatingHours[0].description
+      var parkPhoneNumber =
+        parkData.data[parkArray[i].parkArrayIndex].contacts.phoneNumbers[0]
+          .phoneNumber;
+      var operatingHours =
+        parkData.data[parkArray[i].parkArrayIndex].operatingHours[0]
+          .description;
       searchBirds(parkLatitude, parkLongitude);
       console.log(parkData.data[parkArray[i].parkArrayIndex]);
       hero(
@@ -137,7 +141,7 @@ function pickPark(pickedPark) {
         parkDescription,
         parkEmail,
         parkPhoneNumber,
-        operatingHours,
+        operatingHours
       );
     }
   }
@@ -151,8 +155,8 @@ var imageTitle = document.getElementById("imageTitle");
 var imagesCredit = document.getElementById("credit");
 var description = document.getElementById("descriptionOfPark");
 var parkInfo = document.getElementById("parkInfo");
-var parkNumber =document.getElementById("parkNumber");
-var oHours =document.getElementById("oHours");
+var parkNumber = document.getElementById("parkNumber");
+var oHours = document.getElementById("oHours");
 
 function hero(
   parkName,
@@ -163,7 +167,7 @@ function hero(
   parkDescription,
   parkEmail,
   parkPhoneNumber,
-  operatingHours,
+  operatingHours
 ) {
   heroParkName.textContent = parkName.toUpperCase();
   parkLink.setAttribute("href", parkWeb);
@@ -176,10 +180,10 @@ function hero(
   description.textContent = parkDescription;
 
   parkInfo.textContent = "Email us: " + parkEmail;
-  parkNumber.textContent= "Call us: " + parkPhoneNumber
-  oHours.textContent= operatingHours
-    parkInfo.setAttribute("href", "mailto:" + parkEmail);
-  
+  parkNumber.textContent = "Call us: " + parkPhoneNumber;
+  oHours.textContent = operatingHours;
+  parkInfo.setAttribute("href", "mailto:" + parkEmail);
+
   // park hours
   // park
 }
@@ -281,8 +285,7 @@ function renderBirds(birdArray) {
       var obsDateContent = document.createElement("p");
       var sciNameContent = document.createElement("p");
 
-
-      cardBank.classList.add("columns", "is-centered", "pb-1","mb-3");
+      cardBank.classList.add("columns", "is-centered", "pb-1", "mb-3");
 
       cardToAdd.classList.add("card", "column", "is-4");
       cardContent.classList.add("card-content");
