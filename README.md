@@ -5,6 +5,7 @@
 https://treblotnad.github.io/07-project-1/
 
 ## Usage
+
 Landing page shows cool bird pictures with links to birding related websites.  
 Search box takes input of a national park. Can be shortened name, as long as string is included in full park name.  
 Results page is switched to after confirming park choice, and park info and list of recent bird sightings in the area are displayed.  
@@ -37,24 +38,11 @@ lastly the website is set up to save past searches to ensure ease of access of t
 
 ![Gif of landing page, search. Park data and bird sightings displayed.](assets/images/ezgif.com-video-to-gif-converted.gif)
 
-## Future Improvements
-Some of the main improvements that could be fun to implement are
+https://treblotnad.github.io/07-project-1/
 
-    Use a third api to look up bird names and have pictures of the birds directly on the web page
-    Implement a X button on all recently searched buttons to individually clear local storage and buttons and save ones users want to keep
-    Use a fourth api to create a map on the web page and using data from the bird api create a hot zone area to display where on a map birds are spotted more frequent and have images show from the image api
 
 ## Special Thanks 
-    Thank you to:
-    The National Parks Service for allowing us to use their parks API 
-    And to the Cornell lab of Ornithology for their api
-
-## Contact information
-Github : <https://github.com/Joseortiz0918>
-    
-Github : <https://github.com/treblotnad>
-    
-Github : <https://github.com/Pilar1936>
-
+    Thank you to the National Parks Service for allowing us to use their parks API and to the Cornell lab of Ornithology for their api
 ## License
+
 Please refer to the License in the repo.
